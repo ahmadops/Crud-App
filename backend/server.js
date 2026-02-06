@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect("mongodb+srv://ahmadakram_db_user:1ypDccgeoqMFShbS@cluster0.3xghxsz.mongodb.net/")
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("Connected to MongoDB"))
   .catch(err => console.error("Could not connect to MongoDB", err));
 
@@ -51,4 +51,4 @@ app.get('/{*splat}', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+app.listen(5000, () => console.log("Server running on port 5000")); 
