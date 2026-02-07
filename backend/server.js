@@ -3,13 +3,17 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path'); // Added for file paths
 const User = require('./models/user');
+require('dotenv').config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI)
+//const MONGO_URI = "mongodb+srv://ahmadakram_db_user:1ypDccgeoqMFShbS@cluster0.3xghxsz.mongodb.net/"
+
+const MONGO_URI = process.env.MONGO_URI;
+
+mongoose.connect(MONGO_URI)
   .then(() => console.log("Connected to MongoDB"))
   .catch(err => console.error("Could not connect to MongoDB", err));
 
@@ -51,4 +55,8 @@ app.get('/{*splat}', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.listen(5000, () => console.log("Server running on port 5000")); 
+//app.listen(5000, () => console.log("Server running on port 5000")); 
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});

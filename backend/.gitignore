@@ -1,0 +1,63 @@
+# ---- General ----
+.DS_Store
+Thumbs.db
+
+# ---- Environment Variables ----
+.env
+.env.*
+!.env.example
+
+# ---- Node.js ----
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ---- Logs ----
+logs/
+*.log
+*.log.*
+log.txt
+
+# ---- Build Output ----
+dist/
+build/
+.tmp/
+.temp/
+
+# ---- Frontend Frameworks (React/Vite/etc.) ----
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+frontend/.next/
+frontend/out/
+
+# ---- Backend ----
+backend/node_modules/
+backend/dist/
+backend/build/
+
+# ---- Testing ----
+coverage/
+*.coverage
+.nyc_output/
+
+# ---- OS / IDE Files ----
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---- Docker ----
+docker-data/
+*.pid
+
+# ---- Misc ----
+*.cache/
+.cache/
+``
