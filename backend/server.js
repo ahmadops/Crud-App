@@ -9,11 +9,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-//const MONGO_URI = "mongodb+srv://ahmadakram_db_user:1ypDccgeoqMFShbS@cluster0.3xghxsz.mongodb.net/"
+//MONGO_URI = "mongodb+srv://ahmadakram_db_user:1ypDccgeoqMFShbS@cluster0.3xghxsz.mongodb.net/"
 
-const MONGO_URI = process.env.MONGO_URI;
-
-mongoose.connect(MONGO_URI)
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("Connected to MongoDB"))
   .catch(err => console.error("Could not connect to MongoDB", err));
 
